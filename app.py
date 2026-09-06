@@ -2,6 +2,7 @@ import streamlit as st
 import requests
 from pathlib import Path
 import pandas as pd
+import os
 import streamlit.components.v1 as components
 
 # ============================================================
@@ -15,7 +16,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-API_URL = "http://13.203.77.16:8000"
+API_URL = os.getenv("API_URL", "http://13.203.77.16:8000").rstrip("/")
 
 # Catchy AI/ML visual. Unsplash image URL referenced by an
 # external project as a machine-learning visualization.
